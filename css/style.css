@@ -1,0 +1,31 @@
+@font-face{
+
+	font-family:"Brandon_reg";
+	src: url(../fonts/Brandon_reg.otf);
+}
+@font-face{
+
+	font-family:"Brandon_light";
+	src: url(../fonts/Brandon_light.otf);
+}
+
+
+h1{
+	font-family: "Brandon_light";
+	font-size: 50px;
+	font-style: normal;
+	text-align: center;
+	
+}
+
+
+body{
+	display: block;
+
+}
+
+
+
+#today{
+	
+}
