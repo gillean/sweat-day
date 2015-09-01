@@ -1,66 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name"viewport" cont="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-
-	<title>Document</title>
-</head>
-<body>
-<div id="header">
-	<h1>Sweat Day</h1>
-</div>
-
-
-<div class="carousel">
-	
-	<div>
-        <img src="images/core_fusion_barre.jpg" alt="Barre">
-		<!-- <video autoplay loop poster="images/core_fusion_barre.jpg"><source src="videos/core_fusion_barre.mp4" type="video/mp4">
-		</video> -->
-	</div>
-
- 	<div>
-        <img src="images/track_run.jpg" alt="Track Run">
- 		<!-- <video autoplay loop poster="images/track_run.jpg">
-		<source src="videos/track_run.mp4" type="video/mp4">
-		</video> -->
-	</div>
-
-  	<div>
-        <img src="images/yoga.jpg" alt="Yoga">
-  		<!-- <video autoplay loop poster="images/yoga.jpg">
-		<source src="videos/yoga.mp4" type="video/mp4">
-		</video> -->
-	</div> 
-
-	<div>
-        <img src="images/mile_high.jpg" alt="Mile High">
-  		<!-- <video autoplay loop poster="images/mile_high.jpg">
-		<source src="videos/mile_high.mp4" type="video/mp4">
-		</video> -->
-	</div>
-
-
-</div>
-
-
-<!--canvas-->
-
-<canvas id="canvas" resize keepalive="true">
-	
-</canvas>
-
-<!-- This is our precentage complete label. -->
-<div id="percentLabel">
-    Sweat Day
-</div>
-
-<!--paper js script-->
-
 <script type="text/paperscript" canvas="canvas">
 
 
@@ -108,7 +45,7 @@
     function drawReveal( percentRevealed ){
 
         // Set the fill color.
-        project.currentStyle.fillColor = "white";
+        project.currentStyle.fillColor = "black";
 
         // Get the releveant coordinates for drawing the reveal
         // path on the canvas.
@@ -145,7 +82,7 @@
         currentReveal = new CompoundPath( screenCover, reveal );
 
         // Update the label.
-        percentLabel.text( "Sweat Day" );
+        percentLabel.text( percentRevealed + "%" );
 
     }
 
@@ -154,7 +91,7 @@
     function onFrame(){
 
         // Check to see if our animation is done.
-        if (percent > 50){
+        if (percent > 100){
 
             // Clear our percent-simulation timer.
             clearInterval( timer );
@@ -208,19 +145,3 @@
     );
 </script>
 
-
-  
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-	
-	<script src="js/app.js"></script>
-    <script src="js/intro.js"></script>
-    <script src="js/paper-full.js"></script>
-	<script type="text/javascript" src="slick/slick.min.js">
-	</script>
-    <script src="js/script.js"></script>
-
-
-
-	
-</body>
-</html>

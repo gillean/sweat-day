@@ -20,6 +20,34 @@ h1{
 	
 }
 
+/*////intro canvas animation/////*/
+
+#canvas {
+    height: 100% ;
+    left: 0px ;
+    position: fixed ;
+    top: 0px ;
+    width: 100% ;
+    z-index: 100 ;
+    }
+
+#percentLabel {
+    background-color: #ffffff ;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px; 
+
+    color: #666666 ;
+    font-size: 25px ;
+    font-family: "Brandon_light";
+    left: 50% ;
+    position: fixed;
+    text-align: center;
+    top: 50% ;
+    z-index: 200 ;
+}
+
+
 
 
 
@@ -41,38 +69,12 @@ body{
 
 /*////////carousal ////////*/
 .carousal{
-	width: 960px;
+	width: 60%;
 	margin: 0 auto;
 }
 
-.frame {
-  width: 800px;
-  height: 800px;
-  overflow: hidden;
-  position: relative;
-}
 
-.tray {
-  height: 800px;
-  position: relative;
-}
   
-.slide {
-  float: left;
-  width: 800px;
-  height: 800px;
-}
 
-.slide img, .slide iframe, .slide table, .slide video, .slide audio {
-  width: 100%;
-  max-width: 100%;
-}
-
-.prev, .next {
-  position: absolute;
-  top: 49%;
-}
-.prev { left: 0; }
-.next { right: 0; }
 
 
