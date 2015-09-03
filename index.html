@@ -5,208 +5,212 @@
 	<meta name"viewport" cont="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+	
 
 	<title>Document</title>
 </head>
 <body>
-<div id="header">
-	<h1>Sweat Day</h1>
-</div>
+    <div id="header">
+    	<h1>Sweat Day</h1>
+    </div>
 
 
-<div class="carousel">
-	
-	<div>
-        <img src="images/core_fusion_barre.jpg" alt="Barre">
-		<!-- <video autoplay loop poster="images/core_fusion_barre.jpg"><source src="videos/core_fusion_barre.mp4" type="video/mp4">
-		</video> -->
-	</div>
+    <div class="carousel">
+      <div class="frame">
+            <div class="tray">
+                <div class="slide">
+                    <span class="caption">Track Speedwork</span>
+               \\\
+                	<video autoplay loop poster="images/track_run.jpg">
+                	<source src="videos/track_run.mp4" type="video/mp4">
+                	</video>
+                </div>
+                <div class="slide">
+                    <span class="caption">Core Fusion Barre</span>
 
- 	<div>
-        <img src="images/track_run.jpg" alt="Track Run">
- 		<!-- <video autoplay loop poster="images/track_run.jpg">
-		<source src="videos/track_run.mp4" type="video/mp4">
-		</video> -->
-	</div>
+                    <img src="images/core_fusion_barre.jpg" alt="Barre">
+                   <!--  <video autoplay loop poster="images/core_fusion_barre.jpg"><source src="videos/core_fusion_barre.mp4" type="video/mp4"> -->
+                    </video>
+                </div>
 
-  	<div>
-        <img src="images/yoga.jpg" alt="Yoga">
-  		<!-- <video autoplay loop poster="images/yoga.jpg">
-		<source src="videos/yoga.mp4" type="video/mp4">
-		</video> -->
-	</div> 
+                <div class="slide">
+                    <img src="images/yoga.jpg" alt="Yoga">
+                		<!-- <video autoplay loop poster="images/yoga.jpg">
+                	<source src="videos/yoga.mp4" type="video/mp4">
+                	</video> -->
+                </div> 
 
-	<div>
-        <img src="images/mile_high.jpg" alt="Mile High">
-  		<!-- <video autoplay loop poster="images/mile_high.jpg">
-		<source src="videos/mile_high.mp4" type="video/mp4">
-		</video> -->
-	</div>
-
-
-</div>
-
-
-<!--canvas-->
-
-<canvas id="canvas" resize keepalive="true">
-	
-</canvas>
-
-<!-- This is our precentage complete label. -->
-<div id="percentLabel">
-    Sweat Day
-</div>
-
-<!--paper js script-->
-
-<script type="text/paperscript" canvas="canvas">
+                <div class="slide">
+                    <img src="images/mile_high.jpg" alt="Mile High">
+                		<!-- <video autoplay loop poster="images/mile_high.jpg">
+                	<source src="videos/mile_high.mp4" type="video/mp4">
+                	</video> -->
+                </div>
+            </div>
+          <a href="#" class="prev"><i class="fa fa-chevron-left fa-3x"></i></a>
+          <a href="#" class="next"><i class="fa fa-chevron-right fa-3x"></i></a>
+      </div>
+    </div> <!--carousel-->
 
 
-    // Get a reference to the canvas object.
-    var revealCanvas = $( "#canvas" );
 
-    // Get a reference to the perecent label.
-    var percentLabel = $( "#percentLabel" );
+    <!--canvas-->
 
+    <canvas id="canvas" resize keepalive="true">
+    	
+    </canvas>
 
-    // I return the relevant screen/canvas coordinates needed
-    // to draw the canvas object.
-    function getRevealCoordinates( percentRevealed ){
+    <!-- This is our precentage complete label. -->
+    <div id="percentLabel">
+        <h1>Sweat Day</h1>
+    </div>
 
-        // Default the percent to zero if not provided.
-        percentRevealed = (percentRevealed || 0);
+    <!--paper js script-->
 
-        // Calculate the relevant coordinates.
-        var width = revealCanvas.width();
-        var height = revealCanvas.height();
-        var centerX = Math.floor( width / 2 );
-        var centerY = Math.floor( height / 2 );
-        var complete = Math.max( centerX, centerY );
-        var revealRadius = Math.floor( complete * (percentRevealed / 100) );
+    <script type="text/paperscript" canvas="canvas">
+        // Get a reference to the canvas object.
+        var revealCanvas = $( "#canvas" );
 
-        // Return the coordinate collection.
-        return({
-            width: width,
-            height: height,
-            centerX: centerX,
-            centerY: centerY,
-            revealRadius: revealRadius
-        });
-
-    }
+        // Get a reference to the perecent label.
+        var percentLabel = $( "#percentLabel" );
 
 
-    // Get a reference to the current reveal path. We will
-    // need this so that we can remove it between frame
-    // rendering.
-    var currentReveal = null;
+        // I return the relevant screen/canvas coordinates needed
+        // to draw the canvas object.
+        function getRevealCoordinates( percentRevealed ){
+
+            // Default the percent to zero if not provided.
+            percentRevealed = (percentRevealed || 0);
+
+            // Calculate the relevant coordinates.
+            var width = revealCanvas.width();
+            var height = revealCanvas.height();
+            var centerX = Math.floor( width / 2 );
+            var centerY = Math.floor( height / 2 );
+            var complete = Math.max( centerX, centerY );
+            var revealRadius = Math.floor( complete * (percentRevealed / 100) );
+
+            // Return the coordinate collection.
+            return({
+                width: width,
+                height: height,
+                centerX: centerX,
+                centerY: centerY,
+                revealRadius: revealRadius
+            });
+
+        }
 
 
-    // I draw the current reveal over the page content.
-    function drawReveal( percentRevealed ){
+        // Get a reference to the current reveal path. We will
+        // need this so that we can remove it between frame
+        // rendering.
+        var currentReveal = null;
 
-        // Set the fill color.
-        project.currentStyle.fillColor = "white";
 
-        // Get the releveant coordinates for drawing the reveal
-        // path on the canvas.
-        var coords = getRevealCoordinates( percentRevealed );
+        // I draw the current reveal over the page content.
+        function drawReveal( percentRevealed ){
 
-        // Create a shape for the "fill". We are going to "punch"
-        // a cicrle out of this to reveal the content below.
-        var screenCover = new Path.Rectangle(
-            0,
-            0,
-            coords.width,
-            coords.height
+            // Set the fill color.
+            project.currentStyle.fillColor = "white";
+
+            // Get the releveant coordinates for drawing the reveal
+            // path on the canvas.
+            var coords = getRevealCoordinates( percentRevealed );
+
+            // Create a shape for the "fill". We are going to "punch"
+            // a cicrle out of this to reveal the content below.
+            var screenCover = new Path.Rectangle(
+                0,
+                0,
+                coords.width,
+                coords.height
+            );
+
+            // Create our "punch" for the compound path. This
+            // transparency will reveal the content behind the
+            // page overlay.
+            var reveal = new Path.Circle(
+                new Point( coords.centerX, coords.centerY ),
+                coords.revealRadius
+                );
+
+            // If there is a current overlay, remove it. Otherwise,
+            // the canvas doesn't know to refresh the transparency.
+            if (currentReveal){
+
+                currentReveal.remove();
+
+            }
+
+            // Create the new compond path. When doing this, the
+            // parts of the paths that overlap will be created as a
+            // transparency (like any vector graphic program).
+            currentReveal = new CompoundPath( screenCover, reveal );
+
+            // Update the label.
+            percentLabel.text( "Sweat Day" );
+
+        }
+
+
+        // I am the animation hook. I render the canvas.
+        function onFrame(){
+
+            // Check to see if our animation is done.
+            if (percent > 50){
+
+                // Clear our percent-simulation timer.
+                clearInterval( timer );
+
+                // Kill the onFrame() event handler.
+                onFrame = null;
+
+                // Remove the canvas and label.
+                revealCanvas.remove();
+                percentLabel.fadeOut();
+
+                // Return out.
+                return;
+
+            }
+
+            // As we near the end of our loading, we want to start
+            // fading out the overlay to provide a smooth and
+            // pleasing transition.
+            if (percent >= 90){
+
+                revealCanvas.css(
+                    "opacity",
+                    ((100 - percent) / 10)
+                );
+
+            }
+
+            // Draw the updated reveal overlay.
+            drawReveal( percent );
+
+        }
+
+
+        // Trigger the first reveal.
+        drawReveal();
+
+
+        // -------------------------------------------------- //
+        // -------------------------------------------------- //
+
+
+        // Simulate something loading.
+        var percent = 0;
+
+        var timer = setInterval(
+            function(){
+                percent++;
+            },
+            50
         );
-
-        // Create our "punch" for the compound path. This
-        // transparency will reveal the content behind the
-        // page overlay.
-        var reveal = new Path.Circle(
-            new Point( coords.centerX, coords.centerY ),
-            coords.revealRadius
-            );
-
-        // If there is a current overlay, remove it. Otherwise,
-        // the canvas doesn't know to refresh the transparency.
-        if (currentReveal){
-
-            currentReveal.remove();
-
-        }
-
-        // Create the new compond path. When doing this, the
-        // parts of the paths that overlap will be created as a
-        // transparency (like any vector graphic program).
-        currentReveal = new CompoundPath( screenCover, reveal );
-
-        // Update the label.
-        percentLabel.text( "Sweat Day" );
-
-    }
-
-
-    // I am the animation hook. I render the canvas.
-    function onFrame(){
-
-        // Check to see if our animation is done.
-        if (percent > 50){
-
-            // Clear our percent-simulation timer.
-            clearInterval( timer );
-
-            // Kill the onFrame() event handler.
-            onFrame = null;
-
-            // Remove the canvas and label.
-            revealCanvas.remove();
-            percentLabel.fadeOut();
-
-            // Return out.
-            return;
-
-        }
-
-        // As we near the end of our loading, we want to start
-        // fading out the overlay to provide a smooth and
-        // pleasing transition.
-        if (percent >= 90){
-
-            revealCanvas.css(
-                "opacity",
-                ((100 - percent) / 10)
-            );
-
-        }
-
-        // Draw the updated reveal overlay.
-        drawReveal( percent );
-
-    }
-
-
-    // Trigger the first reveal.
-    drawReveal();
-
-
-    // -------------------------------------------------- //
-    // -------------------------------------------------- //
-
-
-    // Simulate something loading.
-    var percent = 0;
-
-    var timer = setInterval(
-        function(){
-            percent++;
-        },
-        50
-    );
-</script>
+    </script>
 
 
   
@@ -215,8 +219,6 @@
 	<script src="js/app.js"></script>
     <script src="js/intro.js"></script>
     <script src="js/paper-full.js"></script>
-	<script type="text/javascript" src="slick/slick.min.js">
-	</script>
     <script src="js/script.js"></script>
 
 
