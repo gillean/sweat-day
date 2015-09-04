@@ -24,4 +24,9 @@ $(function() {
     // just call the loading function directly
     $('button').click(loading);
 
+
+
+
+
 });
+
