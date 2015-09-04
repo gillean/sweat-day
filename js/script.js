@@ -1,37 +1,27 @@
-$(function(){
- 
-  var numOfSlides = $('.slide').size(),
-      slideWidth = $('.slide').width(),
-      slidePos = 0,
-      speed =600,
-      animateSlide = function(self){
-        var distance = slidePos * slideWidth;
-        $(self).parent().find('.tray').animate({right: distance},speed);
-      };
+$(function() {
 
-  $('.tray').width(numOfSlides * slideWidth);
+    var loading = function() {
+        // add the overlay with loading image to the page
+        var over = '<div id="overlay">' +
+            '<img id="loading" src="http://bit.ly/pMtW1K">' +
+            '</div>';
+        $(over).appendTo('body');
 
-  $('.next').click(function(event){
-    event.preventDefault();
-    if (slidePos < numOfSlides -1){
-      slidePos +=1;
-    } else {
-      slidePos = 0;
+        // click on the overlay to remove it
+        //$('#overlay').click(function() {
+        //    $(this).remove();
+        //});
 
-    }
-    animateSlide(this);
-  });
+        // hit escape to close the overlay
+        $(document).keyup(function(e) {
+            if (e.which === 27) {
+                $('#overlay').remove();
+            }
+        });
+    };
 
-  $('.prev').click(function(event){
-    event.preventDefault();
-    if (slidePos > 0) {
-      slidePos -=1;
-    } else {
-      slidePos = numOfSlides - 1;
-    }
-    animateSlide(this);
-
-  });
-
+    // you won't need this button click
+    // just call the loading function directly
+    $('button').click(loading);
 
 });

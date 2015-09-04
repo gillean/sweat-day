@@ -1,4 +1,4 @@
-<script type="text/paperscript" canvas="canvas">
+
 
 
     // Get a reference to the canvas object.
@@ -143,5 +143,5 @@
         },
         50
     );
-</script>
+
 
