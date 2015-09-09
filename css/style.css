@@ -16,8 +16,20 @@ h1{
 	font-family: "Brandon_light";
 	font-size: 50px;
 	font-style: normal;
-	text-align: center;
-	
+	text-align: center;	
+}
+
+h2{
+  font-family: "Brandon_light";
+  font-size: 30px;
+  font-style: normal;
+  text-align: center;
+}
+
+p{  font-family: "Brandon_light";
+  font-size: 40px;
+  font-style: normal;
+  text-align: center;
 }
 
 /*////intro canvas animation/////*/
@@ -52,7 +64,7 @@ h1{
     -moz-border-radius: 25px 25px 25px 25px ;
     color: #FFFFFF ;
     font-size: 14px ;
-   display: inline-block;
+    display: inline-block;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -62,46 +74,70 @@ h1{
     height: 400px;
     margin: auto;
     text-align: center ;
-   
-    
     z-index: 200 ;
     }
 
 
 
-/*/////////about///////////*/
-#overlay {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    background: #000;
-    opacity: 0.8;
-    filter: alpha(opacity=80);
+/*/////////about follow overlays///////////*/
+#about-overlay {
+  width:100%;
+  height: 100%;
+  position:fixed;
+  display:none;
+  background: #000;
+  z-index: 100;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
 }
 
-#loading {
-    width: 50px;
-    height: 57px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: -28px 0 0 -25px;
+.description{
+  position:relative;
+  margin: 0 auto;
+  top:30%;
+  color:white;
+  width: 700px;
+  height: 500px;
+  z-index: 200;
 }
+
+#follow-overlay{
+  width:100%;
+  height: 100%;
+  position:fixed;
+  display:none;
+  background: #000;
+  z-index: 100;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+
+.instagram{
+  position: fixed;
+  display: inline;
+  margin: 0 auto;
+  left: 48%;
+  top: 46%;
+  color:#fff;
+
+}
+.close{
+  position:fixed;
+  top:20px;
+  right:20px;
+  color:#fff;
+}
+
+
 
 
 
 /*////////main styling ////////*/
-
-#today{
-	
-}
-
 body{
 
 	width: 960px;
-	margin: 0 auto;
+  margin:0 0 0 0;
+  margin-bottom: 0px;
   background: #fff;
 }
 
@@ -111,64 +147,131 @@ body{
     font-style: bold;
     text-align: center;
     position: relative;
-    right: 50%;
-    top: 500px;
-    left: 50%;
+    color:#ffffff;
+    right: -10%;
+    top: 600px;
 }
 
 
 
 
-/*////////layout ////////*/
+/*////////header////////*/
 #header {
     display: block;
-
-    width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5%;
+    width: 100%;
+    height:100px;
     z-index: 50;
-    position:fixed;
-
+    position: fixed;
+    background: #000000;
 }
-/*////////carousal ////////*/
-/*.carousal{
-    width:100%;
-    height: 100%;
-    position:relative;
-}*/
+
+#logo{
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 28px;
+}
+
+#about{
+  position: fixed;
+  font-size: 10px;
+  text-decoration: none;
+  color: #ffffff;
+  left:20px;
+  top:0px;
+  background-color: none;
+  display:inline-block;
+}
+
+#follow{
+  position: fixed;
+  font-size: 10px;
+  text-decoration: none;
+  color: #ffffff;
+  right:20px;
+  top:0px;
+  display:inline-block;
+}
+
+
+/*////////carousal////////*/
+
 .frame {
-  height: 100%;
+  width:100vw;
+  height:100%;
   overflow: hidden;
   position: relative;
+  margin: 0 auto;
 }
 
 .tray {
-  height: 100%;
-  width: 4320px;
+  height: 1080px;
   position: relative;
-  height:100%;
+
 }
   
 .slide {
 
-  height: 100%;
-  display: block;
-  float:left;
+  float: left;
+  width: 1080px;
+  height: 1080px;
+
 }
 
-.slide img, .slide iframe, .slide table, .slide video, .slide audio {
+/*.slide img, .slide iframe, .slide table, .slide video, .slide audio {
   width: 100%;
-  height: 100%;
   max-width: 100%;
-}
+}*/
 
 .prev, .next {
   position: absolute;
   top: 49%;
+  color:#ffffff;
 }
-.prev { left: 0; }
-.next { right: 0; }
+.prev { 
+  left: 20px; 
+  position:fixed;}
+.next { 
+  right: 20px;
+  position:fixed; }
+
+a.icon1 {
+  position: relative;
+  display: block;
+  top: 720px;
+  left: 110px;
+  height: 34px;
+  width: 75px;
+  background: url(../images/fun_sprite.png) no-repeat;
+}
+
+a.icon2 {
+  position: relative;
+  display: block;
+  top: 750px;
+  left: 110px;
+  height: 34px;
+  width: 79px;
+  background: url(../images/heartpump_sprite.png) no-repeat;
+}
+
+a.icon3 {
+  position: relative;
+  display: block;
+  top: 780px;
+  left: 110px;
+  height: 43px;
+  width: 76px;
+  background: url(../images/time_sprite.png) no-repeat;
+}
+
+
+
+
+a.icon1:hover{
+  background-position: 0px -34px;
+}
+
+
 
 
 
