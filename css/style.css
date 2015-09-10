@@ -43,10 +43,10 @@ p{  font-family: "Brandon_light";
 }
 
 #intro-overlay img{
-  width:300px;
+  width: 300px;
   margin-left: auto;
   margin-right: auto;
-  margin-top:43%;
+  margin-top: 43%;
 }
 
 #canvas {
@@ -86,9 +86,9 @@ p{  font-family: "Brandon_light";
   position:fixed;
   display:none;
   background: #000;
-  z-index: 100;
-  opacity: 0.8;
-  filter: alpha(opacity=80);
+  z-index: 300;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
 }
 
 .description{
@@ -98,7 +98,7 @@ p{  font-family: "Brandon_light";
   color:white;
   width: 700px;
   height: 500px;
-  z-index: 200;
+  z-index: 300;
 }
 
 #follow-overlay{
@@ -107,9 +107,9 @@ p{  font-family: "Brandon_light";
   position:fixed;
   display:none;
   background: #000;
-  z-index: 100;
-  opacity: 0.8;
-  filter: alpha(opacity=80);
+  z-index: 300;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
 }
 
 .instagram{
@@ -182,7 +182,108 @@ body{
     position: relative;
     color:#ffffff;
     left: 10%;
-    top: 600px;
+    top: 400px;
+    z-index:100;
+}
+a.icon1 {
+  position: absolute;
+  z-index:200;
+  display: inline-block;
+  margin: 0 0 0 0;
+  top: 80px;
+  left: 1px;
+  height: 34px;
+  width: 75px;
+  background: url(../images/fun_sprite.png) no-repeat;
+}
+
+a.icon2 {
+  position: absolute;
+  z-index:200;
+  display: inline-block;
+  margin: 0 0 0 0;
+  top: 140px;
+  left: 1px;
+  height: 35px;
+  width: 81px;
+  background: url(../images/heartpump_sprite.png) no-repeat;
+}
+
+a.icon3 {
+  position: absolute;
+  z-index:200;
+  display: inline-block;
+  margin: 0 0 0 0;
+  top: 200px;
+  left: 1px;
+  height: 43px;
+  width: 78px;
+  background: url(../images/time_sprite.png) no-repeat;
+}
+
+a.icon1:hover{
+  background-position: 0px -34px;
+}
+a.icon2:hover{
+  background-position: 0px -35px;
+}
+a.icon3:hover{
+  background-position: 0px -43px;
+}
+*, *:before, *:after{ 
+    box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+} 
+.bar-1{ 
+    z-index:100;
+    position: absolute;
+    display: inline-block;
+    display: none;
+    top: 85px;
+    left: 90px;
+    right: 100px;
+    height: 25px;
+    width: 400px;
+    background-color: #E8E8E8;
+    border-radius: 11px;
+    -webkit-transform: skew(0deg);
+    transform: skew(0deg);
+    border-left: 11px transparent;
+}
+
+.bar-2{ 
+    z-index:100;
+    position: absolute;
+    display: inline-block;
+    display: none;
+    top: 145px;
+    left: 90px;
+    right: 100px;
+    height: 25px;
+    width: 200px;
+    background-color: #E8E8E8;
+    border-radius: 11px;
+    -webkit-transform: skew(0deg);
+    transform: skew(0deg);
+    border-left: 11px transparent;
+}
+
+.bar-3{ 
+    z-index:100;
+    position: absolute;
+    display: inline-block;
+    display: none;
+    top: 210px;
+    left: 90px;
+    right: 100px;
+    height: 25px;
+    width: 100px;
+    background-color: #E8E8E8;
+    border-radius: 11px;
+    -webkit-transform: skew(0deg);
+    transform: skew(0deg);
+    border-left: 11px transparent;
 }
 
 
@@ -239,45 +340,8 @@ body{
   right: 20px;
   position:fixed; }
 
-a.icon1 {
-  position: absolute;
-  display: inline-block;
-  margin: 0 0 0 0;
-  top: 70px;
-  left: 1px;
-  height: 34px;
-  width: 75px;
-  background: url(../images/fun_sprite.png) no-repeat;
-}
-
-a.icon2 {
-  position: absolute;
-  display: inline-block;
-  margin: 0 0 0 0;
-  top: 140px;
-  left: 1px;
-  height: 34px;
-  width: 79px;
-  background: url(../images/heartpump_sprite.png) no-repeat;
-}
-
-a.icon3 {
-  position: absolute;
-  display: inline-block;
-  margin: 0 0 0 0;
-  top: 210px;
-  left: 1px;
-  height: 43px;
-  width: 76px;
-  background: url(../images/time_sprite.png) no-repeat;
-}
 
 
-
-
-a.icon1:hover{
-  background-position: 0px -34px;
-}
 
 
 

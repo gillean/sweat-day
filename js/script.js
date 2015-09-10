@@ -16,15 +16,24 @@ $(function() {
     });
 
 
-    $('a .icon1').click(function(event){
-        event.preventDefault();
-        $('.bar-1').slideToggle();
+    $('.icon1').hover(function(){    
+        $('.bar-1').animate({width: 'toggle'});
+
+        });
+    $('.icon2').hover(function(){    
+        $('.bar-2').animate({width: 'toggle'});
+
+        });
+    $('.icon3').hover(function(){    
+        $('.bar-3').animate({width: 'toggle'});
 
         });
 
-    });
+
 
 });
+
+
 
 
 

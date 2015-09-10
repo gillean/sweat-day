@@ -76,7 +76,7 @@ $(function(){
     };
 
     animateTray(initialDistance);
-
+////next click
     $('.next').click(function(){
       clicks += 1;
 
@@ -86,6 +86,18 @@ $(function(){
   
     animateTray(distance);
     });
+
+////previous click
+    $('.prev').click(function(){
+      clicks -= 1;
+
+      var $cloneSlide = $('.tray .slide:last').clone();
+      $('slide:last').remove();
+      $('slide:first').before($cloneSlide);
+      animateTray(distance);
+    });
+
+
 
 });
 
