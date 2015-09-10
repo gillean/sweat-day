@@ -5,14 +5,16 @@
 	<meta name"viewport" cont="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bar.css">
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.1/modernizr.min.js"></script>
     <!-- <script src="https://github.com/potomak/jquery-instagram/raw/master/jquery.instagram.js"></script> -->
    
 
-	<title>Document</title>
+	<title>-Sweatday-</title>
 </head>
 <body>
     
+<!---Hidden Overlays-->
     <div id="about-overlay">
         <div class="description">
             <h1>Sweatday is </h1> 
@@ -21,19 +23,14 @@
         <a href="" class="close"><i class="fa fa-times fa-2x"></i></a>   
     </div>
 
-     <div id= "follow-overlay">
+    <div id= "follow-overlay">
         <div class="description">
             <h1>Follow Sweatday on</h1> 
-            <a href="https://instagram.com/sweatdaynyc/" class="instagram"><i class="fa fa-instagram fa-2x"></i></a>
-            <p>@sweatdaynyc</p>
+            <a href="https://instagram.com/sweatdaynyc/" class="instagram"><p>@sweatdaynyc</p></a>
+            
         </div> 
         <a class="close" href="#"><i class="fa fa-times fa-2x "></i></a>   
-    </div>
-
-
-
-    
-        
+    </div>        
 
     <div id="header">
         <div id="logo"><img src="images/sweatday_logo.svg" alt="Sweatday Logo"></div>
@@ -44,19 +41,20 @@
     
 
     <div class="carousel">
-      <div class="frame">
+     
             <div class="tray">
                 <div class="slide">
                     <span class="caption">Track Speedwork</span>
-                    <a class="icon1"></a>
-                    <a class="icon2"></a>
-                    <a class="icon3"></a>
                 	<video muted autoplay loop poster="images/track_run.jpg">
                 	<source src="videos/track_run.mp4" type="video/mp4">
                 	</video>
                 </div>
                 <div class="slide">
-                    <span class="caption">Summer Streets</span>
+                    <span class="caption">Summer Streets
+                        <a class="icon1"></a><div class="bar-1"></div>
+                        <a class="icon2"></a><div class="bar-2"></div>
+                        <a class="icon3"></a><div class="bar-3"></div>
+                    </span>
                     <video muted autoplay loop poster="images/summer_streets_run.jpg"><source src="videos/summer_streets_run.mp4" type="video/mp4">
                     </video>
                 </div>
@@ -71,12 +69,12 @@
                     <video muted autoplay loop poster="images/mile_high.jpg"><source src="videos/mile_high.mp4" type="video/mp4">
                     </video>
                 </div>
-
+                <a href="#" class="prev"><i class="fa fa-chevron-left fa-2x"></i></a>
+                <a href="#" class="next"><i class="fa fa-chevron-right fa-2x"></i></a>
         
             </div>
-          <a href="#" class="prev"><i class="fa fa-chevron-left fa-2x"></i></a>
-          <a href="#" class="next"><i class="fa fa-chevron-right fa-2x"></i></a>
-      </div>
+          
+  
     </div> <!--carousel-->
 
 <!--circle revela-->
@@ -248,8 +246,6 @@
     </script>
   
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-	
-	<script src="js/app.js"></script>
     <script src="js/paper-full.js"></script>
     <script src="js/carousel.js"></script>
     <script src="js/script.js"></script>

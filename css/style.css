@@ -113,47 +113,18 @@ p{  font-family: "Brandon_light";
 }
 
 .instagram{
-  position: fixed;
-  display: inline;
-  margin: 0 auto;
-  left: 48%;
-  top: 46%;
-  color:#fff;
-
+    display: inline;
+    margin: 0 auto;
+    color: #fff;
+    text-align: center;
 }
+
 .close{
   position:fixed;
   top:20px;
   right:20px;
   color:#fff;
 }
-
-
-
-
-
-/*////////main styling ////////*/
-body{
-
-	width: 960px;
-  margin:0 0 0 0;
-  margin-bottom: 0px;
-  background: #fff;
-}
-
-.caption{
-    font-family: "Brandon_light";
-    font-size: 50px;
-    font-style: bold;
-    text-align: center;
-    position: relative;
-    color:#ffffff;
-    right: -10%;
-    top: 600px;
-}
-
-
-
 
 /*////////header////////*/
 #header {
@@ -166,7 +137,7 @@ body{
 }
 
 #logo{
-  width: 300px;
+  width: 260px;
   margin: 0 auto;
   margin-top: 28px;
 }
@@ -193,34 +164,68 @@ body{
 }
 
 
-/*////////carousal////////*/
 
-.frame {
-  width:100vw;
-  height:100%;
-  overflow: hidden;
-  position: relative;
-  margin: 0 auto;
+/*////////main styling ////////*/
+body{
+
+	width: 960px;
+  margin:0 0 0 0;
+  margin-bottom: 0px;
+  background: #fff;
 }
 
-.tray {
-  height: 1080px;
+.caption{
+    font-family: "Brandon_light";
+    font-size: 50px;
+    font-style: bold;
+    text-align: center;
+    position: relative;
+    color:#ffffff;
+    left: 10%;
+    top: 600px;
+}
+
+
+
+
+/*////////carousal////////*/
+.carousel{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
   position: relative;
+}
+
+.carousel .tray {
+  width:150%;
+  right: 0px;
+  height:100vh;
+  position: relative;
+/*  left: -25%;*/
 
 }
   
-.slide {
+.carousel .tray .slide {
 
   float: left;
-  width: 1080px;
-  height: 1080px;
+  width: 33.33%;
+  margin:0;
+}
+
+.carousel .tray .slide:first-child{
+  margin: 0 0 0 0;
+}
+
+.carousel .tray .slide video{
+  width: 100%;
+  height: 100%;
+  margin: 0 0 0 0;
+  max-width: 100%;
+  background: black;
 
 }
 
-/*.slide img, .slide iframe, .slide table, .slide video, .slide audio {
-  width: 100%;
-  max-width: 100%;
-}*/
+
 
 .prev, .next {
   position: absolute;
@@ -235,30 +240,33 @@ body{
   position:fixed; }
 
 a.icon1 {
-  position: relative;
-  display: block;
-  top: 720px;
-  left: 110px;
+  position: absolute;
+  display: inline-block;
+  margin: 0 0 0 0;
+  top: 70px;
+  left: 1px;
   height: 34px;
   width: 75px;
   background: url(../images/fun_sprite.png) no-repeat;
 }
 
 a.icon2 {
-  position: relative;
-  display: block;
-  top: 750px;
-  left: 110px;
+  position: absolute;
+  display: inline-block;
+  margin: 0 0 0 0;
+  top: 140px;
+  left: 1px;
   height: 34px;
   width: 79px;
   background: url(../images/heartpump_sprite.png) no-repeat;
 }
 
 a.icon3 {
-  position: relative;
-  display: block;
-  top: 780px;
-  left: 110px;
+  position: absolute;
+  display: inline-block;
+  margin: 0 0 0 0;
+  top: 210px;
+  left: 1px;
   height: 43px;
   width: 76px;
   background: url(../images/time_sprite.png) no-repeat;
