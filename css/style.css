@@ -298,8 +298,8 @@ a.icon3:hover{
 }
 
 .carousel .tray {
-  width:150%;
-  right: 0px;
+/*  width:150%;
+*/  /*right: 0px;*/
   height:100vh;
   position: relative;
 /*  left: -25%;*/
@@ -309,8 +309,11 @@ a.icon3:hover{
 .carousel .tray .slide {
 
   float: left;
-  width: 33.33%;
-  margin:0;
+  /*display: table-cell;
+  vertical-align: top;*/
+/*  width: 33.33%;
+*/  margin:0;
+  position:relative;
 }
 
 .carousel .tray .slide:first-child{
@@ -325,7 +328,6 @@ a.icon3:hover{
   background: black;
 
 }
-
 
 
 .prev, .next {

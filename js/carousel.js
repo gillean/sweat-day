@@ -1,61 +1,4 @@
- /*var numOfSlides = $('.slide').size(),
-      slideWidth = $('.slide').width(),
-      slidePos = 0,
-      speed =600,
-      animateSlide = function(self){
-        var distance = slidePos * slideWidth;
-        $(self).parent().find('.tray').animate({right: distance},speed);
-      };
-
-  $('.tray').width(numOfSlides * slideWidth);
-
-  $('.next').click(function(event){
-    event.preventDefault();
-    if (slidePos < numOfSlides -1){
-      slidePos +=1;
-    } else {
-      slidePos = 0;
-
-    }
-    animateSlide(this);
-  });
-
-  $('.prev').click(function(event){
-    event.preventDefault();
-    if (slidePos > 0) {
-      slidePos -=1;
-    } else {
-      slidePos = numOfSlides - 1;
-    }
-    animateSlide(this);
-
-  });
-*/
-
-
-
-  /*$('.carousel first-child').before($
-    ('.carousel last-child'));
-
-  $('.next').click(function(){
-
-    var slideWidth = $('.carousel .tray .slide').outerWidth() + 10;
-
-    //left indent
-    var left_indent = parseInt($('.carousel .tray').css('left'))
-    + slideWidth;
-
-    $('.carousel .tray').animate({'left' : left_indent}
-    , {queue:false, duration:500}, function(){
-
-      $('.carousel:eq(3)').after($'.carousel:eq(0)'));
-      $('.carousel').css({'left' : '210px'});
-
-
-    });
-*/
-
-$(function(){
+/* $(function(){
 
   var clicks = 1,
       initialDistance = 25,
@@ -99,8 +42,73 @@ $(function(){
 
 
 
-});
+});*/
 
+
+$(function(){
+  var clicks1 = 0;
+      clicks2 = 0;
+  var screenWidth = $('.carousel').width();
+  $('.slide').width(screenWidth/2);
+
+
+  var numOfSlides = $('.slide').size();
+  $('.tray').width(numOfSlides * (screenWidth/2) + (screenWidth/2));
+  $('.tray').animate({right: screenWidth/4}, 0);
+//////////reset width of elements when resize window////////
+
+  $(window).resize(function(){
+    screenWidth = $('.carousel').width();
+    $('.slide').width(screenWidth/2);
+    $('.tray').width(numOfSlides * (screenWidth/2) + (screenWidth/2));
+    $('.tray').animate({right: screenWidth/4}, 0);
+
+
+  });
+
+////////click function////////////
+
+  $('.next').click(function(){
+
+  clicks1 += 1;
+    $('.tray').animate({right: (screenWidth * 0.5) * clicks1 + (screenWidth/4)}, 200);
+    var cloneSlide = $('.slide:first').clone();
+    $('.slide:first').remove();
+    $('.slide:last').after(cloneSlide);
+    $('.slide').css({left: (screenWidth/2) * clicks1});
+    
+  });
+
+  $('.prev').click(function(){
+    clicks2 += 1;
+
+    $('.tray').animate({left: (screenWidth * 0.5) * clicks2 - (screenWidth/4)}, 200);
+    var cloneSlide = $('.slide:last').clone();
+    $('.slide:last').remove();
+    $('.slide:first').before(cloneSlide);
+    $('.slide').css({right: (screenWidth/2) * clicks2});
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+});
 
 
 
