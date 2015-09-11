@@ -23,16 +23,36 @@ $(function(){
 
   $('.next').click(function(){
 
-  clicks1 += 1;
-    $('.tray').animate({right: (screenWidth * 0.5) * clicks1 + (screenWidth/4)}, 200);
-    var cloneSlide = $('.slide:first').clone();
-    $('.slide:first').remove();
-    $('.slide:last').after(cloneSlide);
-    $('.slide').css({left: (screenWidth/2) * clicks1});
-    
+    if (clicks2 > 0){ 
+      /*$('.tray').width(numOfSlides * (screenWidth/2) + (screenWidth/2) + ((screenWidth/2) * clicks2));
+*/
+      clicks1 = 1 + clicks2;
+      $('.tray').animate({right: (screenWidth * 0.5) * clicks1 + (screenWidth/4)}, 200);
+      var cloneSlide = $('.slide:first').clone();
+      $('.slide:first').remove();
+      $('.slide:last').after(cloneSlide);
+      $('.slide').css({right: (screenWidth/2) * (clicks1-clicks2)});
+      }
+
+      else{
+      clicks1 += 1;
+      $('.tray').animate({right: (screenWidth * 0.5) * clicks1 + (screenWidth/4)}, 200);
+      var cloneSlide = $('.slide:first').clone();
+      $('.slide:first').remove();
+      $('.slide:last').after(cloneSlide);
+      $('.slide').css({left: (screenWidth/2) * clicks1});
+    }
+
   });
 
+
+
   $('.prev').click(function(){
+
+
+
+
+
     clicks2 += 1;
 
     $('.tray').animate({left: (screenWidth * 0.5) * clicks2 - (screenWidth/4)}, 200);
@@ -41,6 +61,11 @@ $(function(){
     $('.slide:first').before(cloneSlide);
     $('.slide').css({right: (screenWidth/2) * clicks2});
   });
+
+
+  ////////play only active??//////
+
+  $('.slide').eq(clicks1-1).find('video')[0].play();
 
 
 
